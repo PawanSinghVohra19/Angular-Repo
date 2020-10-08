@@ -1,0 +1,26 @@
+
+header{
+    font-size: larger;
+}
+
+label{
+    font-size: 20px;
+    font-style: italic;
+}
+
+[type='text']
+{
+    margin: 10px;
+    font-size: 20px;
+}
+
+#result
+{   
+    float: right;
+    margin-right: 500px;
+    margin-bottom: 100px;
+}
+button{
+    font-size: large;
+    margin:10px
+}

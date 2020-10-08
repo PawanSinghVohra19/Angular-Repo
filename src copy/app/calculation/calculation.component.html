@@ -1,0 +1,23 @@
+<div align='center'>
+    <header align='center'><h1> Calculator</h1></header>
+    <br>
+    <div id="result">
+        <label align='right' style="font-size: 35px;">Result</label>
+        <h1>{{result}}</h1>
+    </div>
+    <label>Number 1 </label>
+    <input type="text" name="number1" [(ngModel)]='number1'>
+    <br>
+    <label>Number 2 </label>
+    <input type="text" name="number2" [(ngModel)]='number2'>
+
+    <div align='center'>
+        <button (click)="add()" onclick="operation.value=this.value" value="Addition">Add(+)</button>
+        <button (click)="subtract()" onclick="operation.value=this.value" value="Subtraction">Subtract(-)</button>
+        <button (click)="multiply()" onclick="operation.value=this.value" value="Multiplication">Multiply(*)</button>
+        <button (click)="divide()" onclick="operation.value=this.value" value="Division">Divide(/)</button>
+        <button (click)="equals()" >Equals(=)</button>
+    </div>
+    <label>Operation:</label>
+    <output id='operation'></output>
+</div>

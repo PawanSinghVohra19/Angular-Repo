@@ -1,0 +1,54 @@
+<!--  DATA ITERATION (IF) (FOR)| IMPORTANT -->
+
+<div>
+    <h1 align="center">Employees Details</h1>
+    <table [ngClass]={myClass1:applyClass1,myClass2:applyClass2} border="2px solid" align="center" style="font-size: 15px;">
+        <thead>
+           <tr>
+               <th align="center">Employee No.</th>
+               <th>Name</th>
+               <th>Age</th>
+               <th *ngIf="isHidden">Salary</th>
+               <th colspan="4">Hobbies</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let i of empList'>
+                <td>{{i.empno}}</td>
+                <td>{{i.empname}}</td>
+                <td>{{i.age}}</td>
+                <td *ngIf="isHidden">{{i.salary}}</td>
+                <td>
+                    <tr *ngFor="let h of i.hobbies">
+                        <td>{{h}}</td>
+                    </tr>
+                </td>
+            </tr>
+            <tr><button (click)="showHideSalary()" >Show/Hide Salary</button></tr>
+            <tr><button (click)="toggleClass()" >Toggle CSS Class</button></tr>
+        </tbody>
+
+    </table>
+    
+    <h1 align="center" [ngStyle]="{'background':backgroundColor, 'color':fontColor, 'font-size':fontSize}"> this is the ngStyle Example</h1>
+    
+    <div align='center'>
+        <h1 [ngStyle]="{'background':changeColor}">Select color for this text from selection</h1>
+        <select [(ngModel)]="changeColor">
+            <option value="green">Green</option>
+            <option value="red">red</option>
+            <option value="yellow">yellow</option>
+            <option value="blue">blue</option>
+        </select>
+    </div>
+    <div>
+        <h1>The Choosen color is </h1>
+        <div [ngSwitch]="changeColor">
+            <h1 *ngSwitchCase="'green'">Green</h1>
+            <h1 *ngSwitchCase="'red'">Red</h1>
+            <h1 *ngSwitchCase="'yellow'">Yellow</h1>
+            <h1 *ngSwitchCase="'blue'">Blue</h1>
+            <h1 *ngSwitchDefault>Nothing is Choosen Yet</h1>
+        </div>
+    </div>
+</div>
